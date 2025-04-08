@@ -27,23 +27,21 @@
             border-radius: 10px 10px 0 0;
         }
         h1 {
-            font-size: clamp(36px, 5vw, 60px); /* Adjusts between 36px and 60px */
+            font-size: clamp(36px, 5vw, 60px);
             font-weight: bold;
             font-style: italic;
             color: #3B6255;
             text-align: center;
             margin-bottom: 15px;
         }
-
         h2 {
-            font-size: clamp(24px, 4vw, 40px); /* Scales between 24px and 40px */
+            font-size: clamp(24px, 4vw, 40px);
             font-weight: bold;
             color: #3B6255;
             margin-bottom: 10px;
         }
-
         p {
-            font-size: clamp(16px, 2.5vw, 20px); /* Scales text nicely */
+            font-size: clamp(16px, 2.5vw, 20px);
         }
         .section {
             padding: 20px;
@@ -52,23 +50,7 @@
         .section:last-child {
             border-bottom: none;
         }
-        .button {
-            display: inline-block;
-            background: #8BA49A; /* Earthy green */
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background: #6D8B7B; /* Darker green on hover */
-        }
-        .rsvp {
+        .button, .rsvp {
             display: inline-block;
             background: #8BA49A;
             color: white;
@@ -77,34 +59,50 @@
             font-weight: bold;
             border-radius: 5px;
             margin-top: 10px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover, .rsvp:hover {
+            background: #6D8B7B;
+        }
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container fade-in">
         <header>
             <h1>Deneive And Conrad</h1>
             <p>Are getting married!</p>
         </header>
 
-        <div class="section">
+        <div class="section fade-in">
             <h2>When & Where</h2>
             <p><strong>Wednesday, October 8, 2025</strong></p>
             <p>Asribali Countryside Garden</p>
             <p>FX97+4MF, Longos, Bacoor, Cavite</p>
-            <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" class="button" target="_blank">
-                Directions
-            </a>
+            <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" class="button" target="_blank">Directions</a>
         </div>
 
-        <div class="section">
+        <div class="section fade-in">
             <h2>Schedule</h2>
             <p><strong>3:00 PM</strong> - Ceremony</p>
             <p><strong>5:00 PM</strong> - Reception</p>
             <p><strong>6:00 PM</strong> - Dinner & Celebration</p>
         </div>
 
-        <div class="section">
+        <div class="section fade-in">
             <h2>Meet Our Entourage</h2>
             <p><strong>Parents:</strong> Mr. & Mrs. Seriosa | Mr. & Mrs. Conrad</p>
             <p><strong>Best Man:</strong> Ewan</p>
@@ -113,7 +111,7 @@
             <p><strong>Groomsmen:</strong> Ewan</p>
         </div>
 
-        <div class="section">
+        <div class="section fade-in">
             <h2>Dress Code</h2>
             <p>Formal Attire in Soft Pastel & Earthy Tones</p>
             <br>
@@ -121,24 +119,20 @@
             <img src="ColorPal.png" alt="Dress Code Colors" style="max-width: 100%; height: auto; display: block; margin: auto;">
         </div>
 
-        <div class="section">
+        <div class="section fade-in">
             <h2>Gifts & Registry</h2>
             <p>Your presence is our greatest gift, but if you wish to contribute, we have a registry available.</p>
         </div>
 
-        <div class="section" style="background-color: #F5F2ED; padding: 30px; border-radius: 10px;">
-  <h2 style="margin-bottom: 10px;">RSVP</h2>
-  <p style="margin-bottom: 25px;">We’d love to know if you’ll be joining us. Please fill out the form below.</p>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSccUQE9WPdikqI-Yz4jfuiJyqlLahCHMULqFn3NY9O86EgYKA/viewform?embedded=true" 
-    width="100%" 
-    height="1200" 
-    frameborder="0" 
-    style="border: none; border-radius: 10px; overflow: hidden;">
-    Loading…
-  </iframe>
-</div>
+        <div class="section fade-in">
+            <h2>RSVP</h2>
+            <p style="font-style: italic;">We can’t wait to celebrate with you! Kindly let us know if you’ll be attending.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSccUQE9WPdikqI-Yz4jfuiJyqlLahCHMULqFn3NY9O86EgYKA/viewform?usp=dialog" class="rsvp">Confirm Attendance</a>
+        </div>
 
+        <footer style="text-align: center; padding: 20px; font-size: 14px; color: #6D8B7B;">
+            With love,<br><strong>Deneive & Conrad</strong>
+        </footer>
     </div>
 </body>
 </html>
