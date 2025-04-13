@@ -44,8 +44,16 @@
             font-size: clamp(16px, 2.5vw, 20px);
         }
         .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
             padding: 20px;
             border-bottom: 1px solid #D2C49E;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section:last-child {
             border-bottom: none;
@@ -110,6 +118,7 @@
 
         .entourage-left,
         .entourage-right {
+            text-align: center;
     flex: 1 1 300px;
 }
     </style>
@@ -144,34 +153,101 @@
             <p><strong>5:00 PM</strong> - Reception</p>
             <p><strong>6:00 PM</strong> - Dinner & Celebration</p>
         </div>
-
+        
         <div class="section entourage">
-        <h2>Meet Our Entourage</h2>
-            <div class="entourage-wrapper">
-                <div class="entourage-left">
-                    <p><strong>Parents of the groom</strong><br> Mr. & Mrs. Seriosa</p>
-                    <p><strong>Best Man:</strong><br> Ewan</p>
-                    <p><strong>Groomsmen:</strong><br> Ewan, Ewan, Ewan</p>
-                </div>
-                <div class="entourage-right">
-                    <p><strong>Maid of Honor:</strong><br> Ewan</p>
-                    <p><strong>Bridesmaids:</strong><br> Ewan, Ewan, Ewan</p>
-                    <p><strong>Flower Girls & Ring Bearer:</strong><br> Names here</p>
+            <h2>Meet Our Entourage</h2>
+                <div class="entourage-wrapper">
+                    <div class="entourage-left">
+                        <p><strong>Parents of the groom</strong><br>Mr. Marvin Regulto Doctor<br>Ms. Balisa Gabinete Regulto</p>
+                    </div>
+    
+                    <div class="entourage-right">
+                        <p><strong>Parents of the bride</strong><br>Mr. Conrad S. Seriosa<br>Ms. Juliet A. Seriosa</p>
+                    </div>
+    
+                    <div style="width: 100%; text-align: center; margin: 20px 0;">
+                        <h3 style="display: inline-block; border-bottom: 2px solid #ffffff; padding-bottom: 5px; margin: 0;">
+                            Principal Sponsors
+                        </h3>
+                    </div>
+    
+                    <div class="entourage-left">
+                        <p><strong>Ninang</strong>
+                            <br>Melinda G. Regulto
+                            <br>Bibiana R. Mendoza
+                            <br>Mildred B. Fuellas
+                            <br>Sonia G. Rass
+                            <br>Araceli G. Bartolay
+                            <br>Emma T. Matipo
+                            <br>Mary Ann A. Seriosa
+                            <br>Marilynm F. Seriosa
+                            <br><br>
+                            <b>Best Man</b><br>James A. Bautista
+                        </p>
+                    </div>
+    
+                    <div class="entourage-right">
+                        <p><strong>Ninong</strong>
+                            <br>Rodelio G. Regulto
+                            <br>Eliseo G. Bartolay
+                            <br>Rafael R. Mendoza
+                            <br>Alberto R. Mendoza
+                            <br>Florencio L. Bartolay
+                            <br>Benjamin T. Matipo
+                            <br>Nelson A. Seriosa
+                            <br>Jasper D. Seriosa
+                            <br><br>
+                            <b>Maid of Honor</b><br>Zarra Jane R. Matipo
+                        </p>
+                    </div>
+    
+                    <div style="width: 100%; text-align: center; margin: 20px 0;">
+                        <h3 style="display: inline-block; border-bottom: 2px solid #ffffff; padding-bottom: 5px; margin: 0;">
+                            Secondary Sponsors
+                        </h3>
+                    </div>
+    
+                    <div class="entourage-left">
+                        <p>
+                            <br>Diane S. Bautista
+                            <br>Angel Ann G. Seriosa
+                            <br>Jessica M. Guno
+                            <br>Cinderalla B. Olit
+                            <br>Raquel G. Vinson
+                            <br>Roxane B. Faderogao
+                            <br>Rutheil B. Godoy
+                            <br><br>
+                            <b>Flower Girl</b><br>Jean Angela S. Bautista
+                        </p>
+                    </div>
+    
+                    <div class="entourage-right">
+                        <p>
+                            <br>Daryn G. Seriosa
+                            <br>Mark Justin V. LLena
+                            <br>Jay Paul T. Matipo
+                            <br>Mark Anthony E. Olit
+                            <br>Allan Gaye B. Fuellas
+                            <br>Angelo G. Faderagao
+                            <br>Elgien Roy O. Godoy
+                            <br><br>
+                            <b>Ring Bearer</b><br>Matthew R. Doctor
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <div class="section">
-            <h2>Dress Code</h2>
-            <p>Formal Attire in Soft Pastel & Earthy Tones</p>
+            <h2>Attire Guide</h2>
+            <p>We would love to see you in your semi-formal attire. We encourage you to dress according to our color theme.</p>
             <br>
             <h2>Colors</h2>
             <img src="ColorPal.png" alt="Dress Code Colors" style="max-width: 100%; height: auto; display: block; margin: auto;">
         </div>
 
         <div class="section">
-            <h2>Gifts & Registry</h2>
-            <p>Your presence is our greatest gift, but if you wish to contribute, we have a registry available.</p>
+            <h2>Gift Guide</h2>
+            <p style="text-align: center;">Our life together has already begun, and we have almost everything under the sun. If you wish to give us a gift, a little money would help us start our new life. But most importantly, we kindly request that you join us as our wedding guest. Now that we've saved you any fuss, we can't wait for you to celebrate with us!</p>
         </div>
 
         <div class="section">
@@ -183,18 +259,29 @@
             </div>
         </div>
 
-        <div class="section" style="background-color: #ffffff; padding: 30px; border-radius: 10px;">
-  <h2 style="margin-bottom: 10px;">RSVP</h2>
-  <p style="margin-bottom: 25px;">We’d love to know if you’ll be joining us. Please fill out the form below.</p>
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSccUQE9WPdikqI-Yz4jfuiJyqlLahCHMULqFn3NY9O86EgYKA/viewform?embedded=true" 
-    width="100%" 
-    height="1200" 
-    frameborder="0" 
-    style="border: none; border-radius: 10px; overflow: hidden;">
-    Loading…
-  </iframe>
-</div>
+        <div class="section" id="rsvp">
+            <h2>RSVP</h2>
+            <p>Please confirm your attendance by filling out the form below.</p>
+            <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width: 500px; margin: 0 auto; text-align: left;">
+              
+              <label for="name">Full Name:</label><br>
+              <input type="text" name="name" id="name" required 
+                     style="width: 100%; padding: 10px; margin-bottom: 10px; 
+                            border-radius: 5px; border: 1px solid #ccc;"><br>
+          
+              <label for="contact">Contact Number:</label><br>
+              <input type="tel" name="contact" id="contact" required 
+                     style="width: 100%; padding: 10px; margin-bottom: 10px; 
+                            border-radius: 5px; border: 1px solid #ccc;"><br>
+          
+              <label for="message">Message (optional):</label><br>
+              <textarea name="message" id="message" rows="4" 
+                        style="width: 100%; padding: 10px; margin-bottom: 15px; 
+                               border-radius: 5px; border: 1px solid #ccc;"></textarea><br>
+          
+              <button type="submit" class="button">Submit RSVP</button>
+            </form>
+          </div>
 
     <script>
         // Countdown Timer Script
@@ -216,6 +303,20 @@
                 countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
         }, 1000);
+    </script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // animate only once
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
