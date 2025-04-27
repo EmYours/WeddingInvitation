@@ -143,7 +143,7 @@
                 <!-- Ceremony -->
                 <div style="background: #ffffff; border-radius: 20px; width: 300px; padding: 20px;">
                   <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #3B6255;">Ceremony</h3>
-                  <img src="Cerm.jpg" alt="Ceremony Location" style="width: 100%; height: auto; margin: 20px 0; border-radius: 12px;">
+                  <img src="your-ceremony-photo.jpg" alt="Ceremony Location" style="width: 100%; height: auto; margin: 20px 0; border-radius: 12px;">
                   <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: #3B6255; margin-bottom: 10px;">Asribali Countryside Garden</h4>
                   <p style="font-size: 14px; color: #3B6255;">FX97+4MF, Longos, Bacoor, Cavite</p>
                   <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View Map</a>
@@ -291,13 +291,23 @@
                 </div>
             </div>
 
-        <div class="section">
-            <h2>Attire Guide</h2>
-            <p>We would love to see you in your semi-formal attire. We encourage you to dress according to our color theme.</p>
-            <br>
-            <h2>Colors</h2>
-            <img src="ColorPal.png" alt="Dress Code Colors" style="max-width: 100%; height: auto; display: block; margin: auto;">
-        </div>
+            <div class="section" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
+
+                <!-- Attire Guide -->
+                <div style="flex: 1; min-width: 300px;">
+                  <h2>Attire Guide</h2>
+                  <p>We would love to see you in your semi-formal attire. We encourage you to dress according to our color theme.</p>
+                </div>
+              
+                <!-- Colors -->
+                <div style="flex: 1; min-width: 300px;">
+                  <h2>Colors</h2>
+                  <img src="ColorPal.png" alt="Dress Code Colors" style="max-width: 100%; height: auto; margin-top: 1rem;">
+                </div>
+              
+              </div>
+              
+              
 
         <div class="section">
             <h2>Gift Guide</h2>
@@ -306,11 +316,29 @@
 
         <div class="section">
             <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="gallery1.jpg" alt="Moment 1">
-                <img src="gallery2.jpg" alt="Moment 2">
-                <img src="gallery3.jpg" alt="Moment 3">
-            </div>
+            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper HTML -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="gallery1.jpg" style="width: 100%;"></div>
+    <div class="swiper-slide"><img src="gallery2.jpg" style="width: 100%;"></div>
+    <div class="swiper-slide"><img src="gallery3.jpg" style="width: 100%;"></div>
+    <!-- Add more slides -->
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper Init -->
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    grabCursor: true,
+  });
+</script>
         </div>
 
         <div class="section" id="rsvp">
