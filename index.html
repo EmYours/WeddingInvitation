@@ -12,6 +12,9 @@
             margin: 0;
             padding: 0;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         .container {
             max-width: 800px;
             margin: auto;
@@ -127,8 +130,7 @@
     <div class="container">
         <header>
             <h1>Deneive And Conrad</h1>
-            <p style="margin: 10px 0;">
-            <p>Are getting married!</p>
+            <p style="margin: 10px 0;">Are getting married!</p>
         </header>
 
         <div class="section">
@@ -289,7 +291,7 @@
                   <h2>Attire Guide</h2>
                   <p>We would love to see you in your <span style="color: #3b6255;">Strictly Formal attire</span>. We encourage you to dress according to our color theme.</p>
                     <p><span style="color: #3b6255;">Ladies</span>: Cocktail Dress | Midi Dress | Long Gown</p>
-                    <p><span style="color: #3b6255;"></span>: Coat & Tie | Polo | Long Sleeves</p>
+                    <p><span style="color: #3b6255;">Men</span>: Coat & Tie | Polo | Long Sleeves</p>
                 </div>
               
                 <!-- Colors -->
@@ -390,18 +392,19 @@
         }, 1000);
     </script>
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // animate only once
-                }
-            });
-        }, { threshold: 0.1 });
-    
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-    </script>
+    }, {
+        threshold: 0.1
+    });
+
+    sections.forEach(section => observer.observe(section));
+</script>
 </body>
 </html>
