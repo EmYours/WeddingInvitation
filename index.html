@@ -149,6 +149,7 @@
                   <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: #3B6255; margin-bottom: 10px;">Asribali Countryside Garden</h4>
                   <p style="font-size: 14px; color: #3B6255;">FX97+4MF, Longos, Bacoor, Cavite</p>
                   <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View Map</a>
+                  <a href="https://www.waze.com/en/live-map/directions/bali-garden-bacoor?place=w.79298705.792724903.2680724"></a>
                 </div>
           
               </div>
@@ -395,7 +396,7 @@
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0.6) {
+        if (entry.intersectionRatio > 0.2) {
           entry.target.classList.add('visible');
         } else {
           entry.target.classList.remove('visible');
@@ -403,7 +404,7 @@
       });
     },
     {
-      threshold: [0, 0.6, 1.0] // Tune this value for when it should count as "in view"
+      threshold: [0, 0.2, 1.0] // Tune this value for when it should count as "in view"
     }
   );
 
