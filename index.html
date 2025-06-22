@@ -1,67 +1,82 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tita & Tito's Wedding</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #E2DFDA;
-            color: #3B6255;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        header {
-            background: #CBDED3;
-            padding: 20px;
-            border-radius: 10px 10px 0 0;
-        }
-        h1 {
-            font-size: clamp(36px, 5vw, 60px);
-            font-weight: bold;
-            font-style: italic;
-            color: #3B6255;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        h2 {
-            font-size: clamp(24px, 4vw, 40px);
-            font-weight: bold;
-            color: #3B6255;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: clamp(16px, 2.5vw, 20px);
-        }
-        .section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            will-change: opacity, transform;
-            padding: 20px;
-            border-bottom: 1px solid #D2C49E;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section:last-child {
-            border-bottom: none;
-        }
-        .button {
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tita &amp; Tito's Wedding</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Cormorant+Garamond:wght@300;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
+<style>
+    html {
+      scroll-behavior: smooth;
+      font-size: 25px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #f8f6f3;
+      color: #3B6255;
+      overflow-x: hidden !important;
+    }
+    
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 60px 20px;
+      position: relative;
+    }
+    .hero {
+      background: url('backg.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(48px, 10vw, 100px);
+      margin: 0;
+      opacity: 0;
+      animation: fadeUp 1.2s ease-out 0.3s forwards;
+    }
+    .hero p {
+      font-size: clamp(18px, 2vw, 24px);
+      margin-top: 15px;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeUp 1.2s ease-out 0.6s forwards;
+    }
+    .section {
+      max-width: 100%;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      text-align: center;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+.button {
             display: inline-block;
             background: #8BA49A;
             color: white;
@@ -71,307 +86,281 @@
             border-radius: 5px;
             transition: background 0.3s ease;
             border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background: #6D8B7B;
-        }
-        .rsvp {
-            display: inline-block;
-            background: #8BA49A;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .countdown {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .gallery img {
-            max-width: 100%;
-            width: 150px;
-            height: auto;
-            border-radius: 8px;
-        }
-        .header-decor {
-            width: 250px;
-            max-width: 60%;
-            height: auto;
-            margin: 15px auto;
-            display: block;
-    }
-         .entourage-wrapper {
+            cursor: pointer; }
+.button:hover {
+            background: #6D8B7B; }
+.entourage-wrapper {
              display: flex;
              justify-content: space-between;
              gap: 30px;
             flex-wrap: wrap;
             text-align: left;
-            margin-top: 15px;
-    }
-
-        .entourage-left,
+            margin-top: 15px; }
+.entourage-left,
         .entourage-right {
             text-align: center;
-    flex: 1 1 300px;
+    flex: 1 1 300px; }
+
+    /*Updown Button*/
+  .nav-button {
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  background-color: #3B6255;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
 }
+.nav-button:hover {
+  background-color: #6D8B7B;
+}
+#scroll-up {
+  bottom: 80px;
+}
+#scroll-down {
+  bottom: 20px;
+}
+    
+    
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Deneive And Conrad</h1>
-            <p style="margin: 10px 0;">Are getting married!</p>
-        </header>
+<!-- HERO SECTION -->
+<section class="hero">
+  <br><br><br><br><br><br><br>
+<h1>Conrad &amp; Deneive</h1>
+<p>Are getting married!</p>
+</section>
+<div class="section">
+<section id="schedule" style="text-align: center; padding: 60px 20px;">
+<p style="font-size: 16px; color: #3B6255; letter-spacing: 1px;"> October 8 2025</p>
+<h2 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #3B6255; margin: 10px 0;">WEDDING TIMELINE</h2>
+<div style="margin: 20px auto;">
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px;">
+<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
+<div style="font-size: 24px; font-weight: bold; color: #fff;">3:00PM</div>
+<div style="margin-top: 8px; font-size: 14px; color: #fff;">COCKTAIL HOUR →</div>
+</div>
+<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
+<div style="font-size: 24px; font-weight: bold; color: #fff;">4:00PM</div>
+<div style="margin-top: 8px; font-size: 14px; color: #fff;">WEDDING CEREMONY →</div>
+</div>
+<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
+<div style="font-size: 24px; font-weight: bold; color: #fff;">5:00PM</div>
+<div style="margin-top: 8px; font-size: 14px; color: #fff;">EVENT PROGRAM →</div>
+</div>
+<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
+<div style="font-size: 24px; font-weight: bold; color: #fff;">6:00PM</div>
+<div style="margin-top: 8px; font-size: 14px; color: #fff;">EVENING DINNER →</div>
+</div>
+<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
+<div style="font-size: 24px; font-weight: bold; color: #fff;">8:00PM</div>
+<div style="margin-top: 8px; font-size: 14px; color: #fff;">PARTY →</div>
+</div>
+<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
+<div style="font-size: 24px; font-weight: bold; color: #fff;">9:00PM</div>
+<div style="margin-top: 8px; font-size: 14px; color: #fff;">EGRESS →</div>
+</div>
+</div>
+</section>
+</div>
+<!-- CONTENT CONTAINER -->
+<div style="display: flex; justify-content: center; gap: 60px; align-items: flex-start; flex-wrap: wrap; padding: 60px 20px; max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto;">
 
-        <div class="section">
-            <section id="whenwhere" style="padding: 60px 20px; text-align: center; background-color: #fff;">
-              <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #3B6255; margin-bottom: 40px;">When & Where</h2>
-              <br>
-              <h2>Countdown to the Big Day<br><p><strong>Wednesday, October 8, 2025</strong></p></h2>
-                <div class="countdown" id="countdown"></div>
-              
-              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: flex-start;">
-          
-                <!-- Ceremony -->
-                <div style="background: #ffffff; border-radius: 20px; width: 300px; padding: 20px;">
-                  <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #3B6255;">Ceremony & Reception</h3>
-                  <img src="Cerm.jpg" alt="Ceremony Location" style="width: 100%; height: auto; margin: 20px 0; border-radius: 12px;">
-                  <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: #3B6255; margin-bottom: 10px;">Asribali Countryside Garden</h4>
-                  <p style="font-size: 14px; color: #3B6255;">FX97+4MF, Longos, Bacoor, Cavite</p>
-                  <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View Map</a>
-                  <a href="https://www.waze.com/en/live-map/directions/bali-garden-bacoor?place=w.79298705.792724903.2680724"></a>
-                </div>
-          
-              </div>
-            </section>
-          </div>
-          
-          
-    
-        <div class="section">
-        <section id="schedule" style="text-align: center; padding: 60px 20px; background-color: #fff;">
-            <p style="font-size: 16px; color: #3B6255; letter-spacing: 1px;"> October 8 2025</p>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #3B6255; margin: 10px 0;">WEDDING TIMELINE</h2>
-            <div style="margin: 20px auto;">
-            </div>
-          
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px;">
-              <div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-                <div style="font-size: 24px; font-weight: bold; color: #fff;">3:00PM</div>
-                <div style="margin-top: 8px; font-size: 14px; color: #fff;">CEREMONY →</div>
-              </div>
-          
-              <div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-                <div style="font-size: 24px; font-weight: bold; color: #fff;">5:30PM</div>
-                <div style="margin-top: 8px; font-size: 14px; color: #fff;">PROGRAM →</div>
-              </div>
-          
-              <div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-                <div style="font-size: 24px; font-weight: bold; color: #fff;">6:30PM</div>
-                <div style="margin-top: 8px; font-size: 14px; color: #fff;">DINNER →</div>
-              </div>
-          
-              <div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-                <div style="font-size: 24px; font-weight: bold; color: #fff;">7:30PM</div>
-                <div style="margin-top: 8px; font-size: 14px; color: #fff;">COCKTAILS →</div>
-              </div>
-          
-              <div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-                <div style="font-size: 24px; font-weight: bold; color: #fff;">8:00PM</div>
-                <div style="margin-top: 8px; font-size: 14px; color: #fff;">PARTY →</div>
-              </div>
-          
-              <div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-                <div style="font-size: 24px; font-weight: bold; color: #fff;">9:00PM</div>
-                <div style="margin-top: 8px; font-size: 14px; color: #fff;">EGRESS →</div>
-              </div>
-            </div>
-          </section>
-          </div>
-        
-        <div class="section entourage">
-            <h2>Meet Our Entourage</h2>
-                <div class="entourage-wrapper">
-                    <div class="entourage-left">
-                        <p><strong>Parents of the groom</strong><br>Mr. Marvin Regulto Doctor<br>Ms. Balisa Gabinete Regulto</p>
-                    </div>
-    
-                    <div class="entourage-right">
-                        <p><strong>Parents of the bride</strong><br>Mr. Domingo Castillo Seriosa<br>Ms. Ana Maria Guillen Seriosa</p>
-                    </div>
-    
-                    <div style="width: 100%; text-align: center; margin: 20px 0;">
-                        <h3 style="display: inline-block; border-bottom: 2px solid #ffffff; padding-bottom: 5px; margin: 0;">
-                            Principal Sponsors
-                        </h3>
-                    </div>
-    
-                    <div class="entourage-left">
-                        <p><strong>Ninang</strong>
-                            <br>Melinda G. Regulto
-                            <br>Bibiana R. Mendoza
-                            <br>Mildred B. Fuellas
-                            <br>Sonia G. Rass
-                            <br>Araceli G. Bartolay
-                            <br>Emma T. Matipo
-                            <br>Mary Ann A. Seriosa
-                            <br>Marilyn F. Seriosa
-                        
-                        </p>
-                    </div>
-    
-                    <div class="entourage-right">
-                        <p><strong>Ninong</strong>
-                            <br>Ignacio G. Regulto
-                            <br>Jessie U. Mendoza
-                            <br>Lito C. Bagot
-                            <br>Benito E. Rass
-                            <br>Carlito C. Seriosa
-                            <br>Mario C. Seriosa
-                            <br>Carlos C. Seriosa
-                            <br>Huberto C. Seriosa
-                            
-                        </p>
-                    </div>
-                    <div style="width: 100%; text-align: center; margin: 20px 0;">
-                        <p><b>Best Man</b><br>James A. Bautista</p>
-                        <br>
-                        <p><b>Maid of Honor</b><br>Zarra Jane R. Matipo</p>
-                    </div>
-                    <div style="width: 100%; text-align: center; margin: 20px 0;">
-                        <h3 style="display: inline-block; border-bottom: 2px solid #ffffff; padding-bottom: 5px; margin: 0;">
-                            Secondary Sponsors
-                        </h3>
-                    </div>
-    
-                    <div class="entourage-left">
-                        <p>
-                            <br>Diane S. Bautista
-                            <br>Angel Ann G. Seriosa
-                            <br>Jessica M. Guno
-                            <br>Cinderalla B. Olit
-                            <br>Raquel G. Vinson
-                            <br>Roxane B. Faderogao
-                            <br>Rutheil B. Godoy
-                        </p>
-                    </div>
-    
-                    <div class="entourage-right">
-                        <p>
-                            <br>Daryn G. Seriosa
-                            <br>Mark Justin V. LLena
-                            <br>Jay Paul T. Matipo
-                            <br>Mark Anthony E. Olit
-                            <br>Allan Gaye B. Fuellas
-                            <br>Angelo G. Faderagao
-                            <br>Elgien Roy O. Godoy
-                        </p>
-                    </div>
-                    <div style="width: 100%; text-align: center; margin: 20px 0;">
-                        <p><b>Flower Girl</b><br>Jean Angela S. Bautista</p>
-                        <br>
-                        <p><b>Ring Bearer</b><br>Matthew R. Doctor</p>
-                    </div>
-                </div>
-            </div>
+  
+    <!-- Countdown Box -->
+    <div style="flex: 1; min-width: 300px; max-width: 450px; background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); text-align: center;">
+      <h2 style="font-size: 18px;">Countdown to the Big Day</h2>
+      <p style="font-size: 32px;"><strong>Wednesday, October 8, 2025</strong></p>
+      <div class="countdown" id="countdown" style="font-size: 24px; font-weight: bold; margin-top: 20px;"></div>
+    </div>
 
-            <div class="section" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
+    <!-- Reception Box -->
+    <div style="flex: 1; min-width: 300px; max-width: 450px; background-color: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); text-align: center;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #3B6255;">Ceremony & Reception</h3>
+      <img src="Cerm.jpg" alt="Ceremony Location" style="width: 100%; height: auto; margin: 20px 0; border-radius: 12px;">
+      <h4 style="font-size: 20px; color: #3B6255; margin-bottom: 10px;">Asribali Countryside Garden</h4>
+      <p style="font-size: 14px; color: #3B6255;">FX97+4MF, Longos, Bacoor, Cavite</p>
+      <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View MAPS</a>
+      <a href="https://www.waze.com/en/live-map/directions/bali-garden-bacoor?place=w.79298705.792724903.2680724" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View Waze</a>
+    </div>
 
-                <!-- Attire Guide -->
-                <div style="flex: 1; min-width: 300px;">
-                  <h2>Attire Guide</h2>
-                  <p>We would love to see you in your <span style="color: #3b6255;">Strictly Formal attire</span>. We encourage you to dress according to our color theme.</p>
-                    <p><span style="color: #3b6255;">Ladies</span>: Cocktail Dress | Midi Dress | Long Gown</p>
-                    <p><span style="color: #3b6255;">Men</span>: Coat & Tie | Polo | Long Sleeves</p>
-                </div>
-              
-                <!-- Colors -->
-                <div style="flex: 1; min-width: 300px;">
-                  <h2>Colors</h2>
-                    <p>Please Come wearing Pastel Brown Colors</p>
-                  <img src="ColorPal.png" alt="Dress Code Colors" style="max-width: 100%; height: auto; margin-top: 1rem;">
-                </div>
-              
-              </div>
-              
-              
-
-        <div class="section">
-        <h1>Reminders<h1>
-            <h2>Gift Guide</h2>
-            <p style="text-align: center;">Our life together has already begun, and we have almost everything under the sun. If you wish to give us a gift, a little money would help us start our new life. But most importantly, we kindly request that you join us as our wedding guest. Now that we've saved you any fuss, we can't wait for you to celebrate with us!</p>
-
-            <h2>Plus One</h2>
-            <p>Due to the constraints of our venue and the size of our families, we have made the difficult decision to limit our guest list to immediate family members and close friends only. We sincerely appreciate your understanding and cooperation in adhering to our wishes.</p>
-            
-            <h2>Children</h2>
-            <p>Although we love your little ones, we can only accommodate the children of immediate family and closest friends. We apologize for the inconvenience this may cause.</p>
-        </div>
-
-        <div class="section">
-            <h2>Gallery</h2>
-            <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-<!-- Swiper HTML -->
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="gallery1.jpg" style="width: 100%;"></div>
-    <div class="swiper-slide"><img src="gallery2.jpg" style="width: 100%;"></div>
-    <div class="swiper-slide"><img src="gallery3.jpg" style="width: 100%;"></div>
-      <div class="swiper-slide"><img src="gallery4.jpg" style="width: 100%;"></div>
-      <div class="swiper-slide"><img src="gallery5.jpg" style="width: 100%;"></div>
-    <!-- Add more slides -->
   </div>
 </div>
 
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<!-- Swiper Init -->
+
+
+
+<div class="section entourage">
+<h2>Meet Our Entourage</h2>
+<div class="entourage-wrapper">
+<div class="entourage-left">
+<p><strong>Parents of the groom</strong><br/>Mr. Marvin Regulto Doctor<br/>Ms. Balisa Gabinete Regulto</p>
+</div>
+<div class="entourage-right">
+<p><strong>Parents of the bride</strong><br/>Mr. Domingo Castillo Seriosa<br/>Ms. Ana Maria Guillen Seriosa</p>
+</div>
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+<h3 style="display: inline-block; border-bottom: 2px solid #ffffff; padding-bottom: 5px; margin: 0;">
+                            Principal Sponsors
+                        </h3>
+</div>
+<div class="entourage-left">
+<p><strong>Ninang</strong>
+<br/>Melinda G. Regulto
+                            <br/>Bibiana R. Mendoza
+                            <br/>Mildred B. Fuellas
+                            <br/>Sonia G. Rass
+                            <br/>Araceli G. Bartolay
+                            <br/>Emma T. Matipo
+                            <br/>Mary Ann A. Seriosa
+                            <br/>Marilyn F. Seriosa
+                        
+                        </p>
+</div>
+<div class="entourage-right">
+<p><strong>Ninong</strong>
+<br/>Ignacio G. Regulto
+                            <br/>Jessie U. Mendoza
+                            <br/>Lito C. Bagot
+                            <br/>Benito E. Rass
+                            <br/>Carlito C. Seriosa
+                            <br/>Mario C. Seriosa
+                            <br/>Carlos C. Seriosa
+                            <br/>Huberto C. Seriosa
+                            
+                        </p>
+</div>
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+<p><b>Best Man</b><br/>James A. Bautista</p>
+<br/>
+<p><b>Maid of Honor</b><br/>Zarra Jane R. Matipo</p>
+</div>
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+<h3 style="display: inline-block; border-bottom: 2px solid #ffffff; padding-bottom: 5px; margin: 0;">
+                            Secondary Sponsors
+                        </h3>
+</div>
+<div class="entourage-left">
+<p>
+<br/>Diane S. Bautista
+                            <br/>Angel Ann G. Seriosa
+                            <br/>Jessica M. Guno
+                            <br/>Cinderalla B. Olit
+                            <br/>Raquel G. Vinson
+                            <br/>Roxane B. Faderogao
+                            <br/>Rutheil B. Godoy
+                        </p>
+</div>
+<div class="entourage-right">
+<p>
+<br/>Daryn G. Seriosa
+                            <br/>Mark Justin V. LLena
+                            <br/>Jay Paul T. Matipo
+                            <br/>Mark Anthony E. Olit
+                            <br/>Allan Gaye B. Fuellas
+                            <br/>Angelo G. Faderagao
+                            <br/>Elgien Roy O. Godoy
+                        </p>
+</div>
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+<p><b>Flower Girl</b><br/>Jean Angela S. Bautista</p>
+<br/>
+<p><b>Ring Bearer</b><br/>Matthew R. Doctor</p>
+</div>
+</div>
+</div>
+
+<div class="section" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
+<!-- Attire Guide -->
+<div style="flex: 1; min-width: 300px;">
+<h2>Attire Guide</h2>
+<p>We would love to see you in your <span style="color: #3b6255;">Strictly Formal attire</span>. We encourage you to dress according to our color theme.</p>
+<p><span style="color: #3b6255;">Ladies</span>: Cocktail Dress | Midi Dress | Long Gown</p>
+<p><span style="color: #3b6255;">Men</span>: Long Sleeves</p>
+</div>
+
+<!-- Colors -->
+<!-- Colors box -->
+<div style="flex: 1; min-width: 300px; padding: 20px;">
+  <h2 style="text-align: center;">Colors</h2>
+  <p style="text-align: center;">Please come wearing <strong>Pastel Brown Colors</strong></p>
+  <img alt="Dress Code Colors" src="ColorPal.png" style="display: block; margin: 0 auto; max-width: 100%; height: 3rem;" />
+</div>
+
+<!-- Centered Entourage + Principal Sponsors (spanning full row) -->
+<div style="flex: 1 1 100%; text-align: center; margin-top: 40px;">
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px;">Entourage</h2>
+  <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+    <img src="entout.png" style="height: 3rem;" alt="Entourage Outer">
+    <img src="ent.png" style="height: 3rem;" alt="Entourage Inner">
+  </div>
+  <p><strong>GROOMSMEN:</strong><br>BARONG TAGALOG (LONG SLEEVES) WITH BLACK PANTS</p>
+  <p><strong>BRIDESMAIDS:</strong><br>DRESS EMERALD GREEN (LONG GOWN)</p>
+
+  <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; margin: 30px 0 10px;">Principal Sponsors</h2>
+  <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+    <img src="prinout.png" style="height: 3rem;" alt="Principal Outer">
+    <img src="prin.PNG" style="height: 3rem;" alt="Principal Inner">
+  </div>
+  <p><strong>NINONG:</strong><br>BARONG TAGALOG (LONG SLEEVES) WITH BLACK PANTS</p>
+  <p><strong>NINANG:</strong><br>DRESS MOCHA MOUSSE (LONG GOWN)</p>
+</div>
+
+
+<div class="section">
+<h1>Reminders<h1>
+<h2>Gift Guide</h2>
+<p style="text-align: center;">Our life together has already begun, and we have almost everything under the sun. If you wish to give us a gift, a little money would help us start our new life. But most importantly, we kindly request that you join us as our wedding guest. Now that we've saved you any fuss, we can't wait for you to celebrate with us!</p>
+<h2>Plus One</h2>
+<p>Due to the constraints of our venue and the size of our families, we have made the difficult decision to limit our guest list to immediate family members and close friends only. We sincerely appreciate your understanding and cooperation in adhering to our wishes.</p>
+<h2>Children</h2>
+<p>Although we love your little ones, we can only accommodate the children of immediate family and closest friends. We apologize for the inconvenience this may cause.</p>
+<img src="reminder.PNG" style="max-width: 100%; height: 7rem;">
+<h3>Be on Time &nbsp;  Finish The Event &nbsp;  Enjoy & Have Fun</h3>
+<h2>Snap & Share</h2>
+<p>Help us Capture and Share our precious moments by tagging us by <br> #<b>Conrad</b>Foundhis<b>NEV</b>erEndingLoveStory</p>
+<img src="fbig.png" style="max-width: 100%; height: 3rem;">
+<br><br><br>
+</div>
+
+</link></div>
+<div class="section" id="rsvp">
+<h2>RSVP</h2>
+<p>Please confirm your attendance by filling out the form below.</p>
+<form action="https://formspree.io/f/your-form-id" method="POST"
+  style="width: 100%; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; padding: 1rem; box-sizing: border-box;">
+
+  <label for="name">Full Name:</label>
+  <input id="name" name="name" type="text" required
+    style="padding: 0.75rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%;"/>
+
+  <label for="contact">Contact Number:</label>
+  <input id="contact" name="contact" type="tel" required
+    style="padding: 0.75rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%;"/>
+
+  <label for="message">Message (optional):</label>
+  <textarea id="message" name="message" rows="4"
+    style="padding: 0.75rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; resize: vertical;"></textarea>
+
+  <button class="button" type="submit" style="align-self: center;">Submit RSVP</button>
+</form>
+</div>
+
+
+<button class="nav-button" id="scroll-up">↑</button>
+<button class="nav-button" id="scroll-down">↓</button>
+
+</body>
 <script>
-  const swiper = new Swiper('.swiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
-    grabCursor: true,
-  });
-</script>
-        </div>
-
-        <div class="section" id="rsvp">
-            <h2>RSVP</h2>
-            <p>Please confirm your attendance by filling out the form below.</p>
-            <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width: 500px; margin: 0 auto; text-align: left;">
-              
-              <label for="name">Full Name:</label><br>
-              <input type="text" name="name" id="name" required 
-                     style="width: 100%; padding: 10px; margin-bottom: 10px; 
-                            border-radius: 5px; border: 1px solid #ccc;"><br>
-          
-              <label for="contact">Contact Number:</label><br>
-              <input type="tel" name="contact" id="contact" required 
-                     style="width: 100%; padding: 10px; margin-bottom: 10px; 
-                            border-radius: 5px; border: 1px solid #ccc;"><br>
-          
-              <label for="message">Message (optional):</label><br>
-              <textarea name="message" id="message" rows="4" 
-                        style="width: 100%; padding: 10px; margin-bottom: 15px; 
-                               border-radius: 5px; border: 1px solid #ccc;"></textarea><br>
-          
-              <button type="submit" class="button">Submit RSVP</button>
-            </form>
-          </div>
-
-    <script>
         // Countdown Timer Script
         const countdown = document.getElementById('countdown');
         const weddingDate = new Date("October 8, 2025 15:00:00").getTime();
@@ -412,7 +401,28 @@
     observer.observe(section);
   });
 </script>
-</body>
+<script>
+  const sections = document.querySelectorAll('.section, section.hero');
+  const scrollUpBtn = document.getElementById('scroll-up');
+  const scrollDownBtn = document.getElementById('scroll-down');
 
+  function scrollToAdjacentSection(direction) {
+    const current = window.scrollY + window.innerHeight / 2;
+    const positions = Array.from(sections).map(s => s.offsetTop);
+    const currentIndex = positions.findIndex(pos => current < pos + 100);
+
+    let targetIndex = direction === 'down' ? currentIndex : currentIndex - 2;
+    if (targetIndex < 0) targetIndex = 0;
+    if (targetIndex >= positions.length) targetIndex = positions.length - 1;
+
+    window.scrollTo({
+      top: positions[targetIndex],
+      behavior: 'smooth'
+    });
+  }
+
+  scrollUpBtn.addEventListener('click', () => scrollToAdjacentSection('up'));
+  scrollDownBtn.addEventListener('click', () => scrollToAdjacentSection('down'));
+</script>
 
 </html>
