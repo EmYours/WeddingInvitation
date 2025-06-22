@@ -126,8 +126,32 @@
 #scroll-down {
   bottom: 20px;
 }
+ /* Default styles for desktop */
+  .timeline-card {
+    background: linear-gradient(135deg, #5A7D6B, #7E9D8B);
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 150px;
+    color: #fff;
+  }
+
+  /* On mobile, remove background and use plain text */
+  @media (max-width: 768px) {
+    .timeline-card {
+      background: none;
+      color: #ffffff;
+      box-shadow: none;
+      border: none;
+      padding: 10px 0;
+    }
+  }
     
-    
+     @media (max-width: 768px) {
+    #rsvp {
+      background-attachment: scroll !important;
+    }
+  }
     </style>
 </head>
 <body>
@@ -138,39 +162,65 @@
 <p>Are getting married!</p>
 </section>
 <div class="section">
-<section id="schedule" style="text-align: center; padding: 60px 20px;">
-<p style="font-size: 16px; color: #3B6255; letter-spacing: 1px;"> October 8 2025</p>
-<h2 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #3B6255; margin: 10px 0;">WEDDING TIMELINE</h2>
-<div style="margin: 20px auto;">
-</div>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px;">
-<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-<div style="font-size: 24px; font-weight: bold; color: #fff;">3:00PM</div>
-<div style="margin-top: 8px; font-size: 14px; color: #fff;">COCKTAIL HOUR →</div>
-</div>
-<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-<div style="font-size: 24px; font-weight: bold; color: #fff;">4:00PM</div>
-<div style="margin-top: 8px; font-size: 14px; color: #fff;">WEDDING CEREMONY →</div>
-</div>
-<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-<div style="font-size: 24px; font-weight: bold; color: #fff;">5:00PM</div>
-<div style="margin-top: 8px; font-size: 14px; color: #fff;">EVENT PROGRAM →</div>
-</div>
-<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-<div style="font-size: 24px; font-weight: bold; color: #fff;">6:00PM</div>
-<div style="margin-top: 8px; font-size: 14px; color: #fff;">EVENING DINNER →</div>
-</div>
-<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-<div style="font-size: 24px; font-weight: bold; color: #fff;">8:00PM</div>
-<div style="margin-top: 8px; font-size: 14px; color: #fff;">PARTY →</div>
-</div>
-<div style="background: linear-gradient(135deg, #5A7D6B, #7E9D8B); padding: 20px 30px; border-radius: 12px; text-align: center; width: 150px;">
-<div style="font-size: 24px; font-weight: bold; color: #fff;">9:00PM</div>
-<div style="margin-top: 8px; font-size: 14px; color: #fff;">EGRESS →</div>
+<div style="text-align: center; margin-top: 2rem; padding: 0 1rem; padding-top: 5rem;">
+  <a href="https://www.facebook.com/watch/?v=1488812122103733&rdid=o4Qxfgc6FRWqt5TT" target="_blank" style="display: inline-block;">Click Me
+    <img 
+      src="er.PNG" 
+      alt="Watch our video on Facebook"
+      style="
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      "
+      onmouseover="this.style.transform='scale(1.05)'"
+      onmouseout="this.style.transform='scale(1)'"
+    >
+  </a>
+  <p style="font-size: 1.1rem; margin-top: 10px;">Watch our Save The Date Video</p>
 </div>
 </div>
-</section>
+<!-- TIMELINE SECTION -->
+ 
+<div class="section">
+  <section id="schedule" style="text-align: center; padding: 60px 20px;background: url('timeback.JPG') center center / cover no-repeat;
+  background-attachment: fixed;">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; color: #ffffff; margin: 10px 0;">WEDDING TIMELINE</h2>
+
+    <div style="margin: 20px auto;"></div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px;">
+      <div class="timeline-card">
+        <div style="font-size: 24px; font-weight: bold;">3:00PM</div>
+        <div style="margin-top: 8px; font-size: 14px;">COCKTAIL HOUR →</div>
+      </div>
+      <div class="timeline-card">
+        <div style="font-size: 24px; font-weight: bold;">4:00PM</div>
+        <div style="margin-top: 8px; font-size: 14px;">WEDDING CEREMONY →</div>
+      </div>
+      <div class="timeline-card">
+        <div style="font-size: 24px; font-weight: bold;">5:00PM</div>
+        <div style="margin-top: 8px; font-size: 14px;">EVENT PROGRAM →</div>
+      </div>
+      <div class="timeline-card">
+        <div style="font-size: 24px; font-weight: bold;">6:00PM</div>
+        <div style="margin-top: 8px; font-size: 14px;">EVENING DINNER →</div>
+      </div>
+      <div class="timeline-card">
+        <div style="font-size: 24px; font-weight: bold;">8:00PM</div>
+        <div style="margin-top: 8px; font-size: 14px;">PARTY →</div>
+      </div>
+      <div class="timeline-card">
+        <div style="font-size: 24px; font-weight: bold;">9:00PM</div>
+        <div style="margin-top: 8px; font-size: 14px;">EGRESS →</div>
+      </div>
+    </div>
+  </section>
 </div>
+
+<div class="section">
 <!-- CONTENT CONTAINER -->
 <div style="display: flex; justify-content: center; gap: 60px; align-items: flex-start; flex-wrap: wrap; padding: 60px 20px; max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto;">
 
@@ -191,7 +241,7 @@
       <a href="https://maps.app.goo.gl/oYzbncb8XocUQpU28" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View MAPS</a>
       <a href="https://www.waze.com/en/live-map/directions/bali-garden-bacoor?place=w.79298705.792724903.2680724" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 25px; background: #3B6255; color: #fff; font-size: 14px; border-radius: 30px; text-decoration: none;">View Waze</a>
     </div>
-
+</div>
   </div>
 </div>
 
@@ -278,15 +328,17 @@
 </div>
 </div>
 </div>
+<div class="section" style="display: flex; flex-direction: column; align-items: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
+  
+  <h1 style="width: 100%;">Details</h1>
 
-<div class="section" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center;">
-<!-- Attire Guide -->
-<div style="flex: 1; min-width: 300px;">
-<h2>Attire Guide</h2>
-<p>We would love to see you in your <span style="color: #3b6255;">Strictly Formal attire</span>. We encourage you to dress according to our color theme.</p>
-<p><span style="color: #3b6255;">Ladies</span>: Cocktail Dress | Midi Dress | Long Gown</p>
-<p><span style="color: #3b6255;">Men</span>: Long Sleeves</p>
-</div>
+  <!-- Attire Guide -->
+  <div style="flex: 1; min-width: 300px;">
+    <h2>Attire Guide</h2>
+    <p>We would love to see you in your <span style="color: #3b6255;">Strictly Formal attire</span>. We encourage you to dress according to our color theme.</p>
+    <p><span style="color: #3b6255;">Ladies</span>: Cocktail Dress | Midi Dress | Long Gown</p>
+    <p><span style="color: #3b6255;">Men</span>: Long Sleeves</p>
+  </div>
 
 <!-- Colors -->
 <!-- Colors box -->
@@ -314,10 +366,10 @@
   <p><strong>NINONG:</strong><br>BARONG TAGALOG (LONG SLEEVES) WITH BLACK PANTS</p>
   <p><strong>NINANG:</strong><br>DRESS MOCHA MOUSSE (LONG GOWN)</p>
 </div>
-
+</div>
 
 <div class="section">
-<h1>Reminders<h1>
+<h1>Reminders</h1>
 <h2>Gift Guide</h2>
 <p style="text-align: center;">Our life together has already begun, and we have almost everything under the sun. If you wish to give us a gift, a little money would help us start our new life. But most importantly, we kindly request that you join us as our wedding guest. Now that we've saved you any fuss, we can't wait for you to celebrate with us!</p>
 <h2>Plus One</h2>
@@ -332,28 +384,58 @@
 <br><br><br>
 </div>
 
-</link></div>
-<div class="section" id="rsvp">
-<h2>RSVP</h2>
-<p>Please confirm your attendance by filling out the form below.</p>
-<form action="https://formspree.io/f/your-form-id" method="POST"
-  style="width: 100%; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; padding: 1rem; box-sizing: border-box;">
+<div class="section" id="rsvp" style="
+  background: url('end.JPG') center center / cover no-repeat;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  color: #fff;
+">
+  <h2 style="margin-bottom: 0.5rem;">RSVP</h2>
+  <p style="margin-bottom: 2rem;">Please confirm your attendance by filling out the form below.</p>
 
-  <label for="name">Full Name:</label>
-  <input id="name" name="name" type="text" required
-    style="padding: 0.75rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%;"/>
+  <form action="https://formspree.io/f/your-form-id" method="POST"
+  style="
+    max-width: 500px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+  ">
 
-  <label for="contact">Contact Number:</label>
-  <input id="contact" name="contact" type="tel" required
-    style="padding: 0.75rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%;"/>
+    
+    <div style="display: flex; flex-direction: column;">
+      <label for="name" style="margin-bottom: 0.25rem; color: #fff;">Full Name:</label>
+      <input id="name" name="name" type="text" required
+        style="padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: none; outline: none;"/>
+    </div>
 
-  <label for="message">Message (optional):</label>
-  <textarea id="message" name="message" rows="4"
-    style="padding: 0.75rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; resize: vertical;"></textarea>
+    <div style="display: flex; flex-direction: column;">
+      <label for="contact" style="margin-bottom: 0.25rem; color: #fff;">Contact Number:</label>
+      <input id="contact" name="contact" type="tel" required
+        style="padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: none; outline: none;"/>
+    </div>
 
-  <button class="button" type="submit" style="align-self: center;">Submit RSVP</button>
-</form>
+    <div style="display: flex; flex-direction: column;">
+      <label for="message" style="margin-bottom: 0.25rem; color: #fff;">Message (optional):</label>
+      <textarea id="message" name="message" rows="4"
+        style="padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: none; outline: none; resize: vertical;"></textarea>
+    </div>
+
+    <button type="submit" class="button" style="
+      align-self: center;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+    ">Submit RSVP</button>
+  </form>
 </div>
+
+
 
 
 <button class="nav-button" id="scroll-up">↑</button>
@@ -407,16 +489,20 @@
   const scrollDownBtn = document.getElementById('scroll-down');
 
   function scrollToAdjacentSection(direction) {
-    const current = window.scrollY + window.innerHeight / 2;
-    const positions = Array.from(sections).map(s => s.offsetTop);
-    const currentIndex = positions.findIndex(pos => current < pos + 100);
+    const currentScroll = window.scrollY + 1; // Add 1 to ensure match when at exact section top
+    const sectionPositions = Array.from(sections).map(s => Math.floor(s.offsetTop));
 
-    let targetIndex = direction === 'down' ? currentIndex : currentIndex - 2;
-    if (targetIndex < 0) targetIndex = 0;
-    if (targetIndex >= positions.length) targetIndex = positions.length - 1;
+    let currentIndex = sectionPositions.findIndex((pos, i) => {
+      const nextPos = sectionPositions[i + 1] || Infinity;
+      return currentScroll >= pos && currentScroll < nextPos;
+    });
+
+    let targetIndex = direction === 'down'
+      ? Math.min(currentIndex + 1, sections.length - 1)
+      : Math.max(currentIndex - 1, 0);
 
     window.scrollTo({
-      top: positions[targetIndex],
+      top: sectionPositions[targetIndex],
       behavior: 'smooth'
     });
   }
@@ -424,5 +510,6 @@
   scrollUpBtn.addEventListener('click', () => scrollToAdjacentSection('up'));
   scrollDownBtn.addEventListener('click', () => scrollToAdjacentSection('down'));
 </script>
+
 
 </html>
